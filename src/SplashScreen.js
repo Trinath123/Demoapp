@@ -32,8 +32,8 @@ export default class SplashScreen extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor='#283f78' barStyle="light-content"/>
-                <Background>
-
+                <Background style={{justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={styles.textContainer}> Getting Started With React Native MultiMedia</Text>
                 </Background>
             </View>
         );
@@ -52,5 +52,10 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    textContainer: {
+        color: '#ffffff',
+        fontSize: 22,
+        fontWeight: '700',
     },
 });

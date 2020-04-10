@@ -4,6 +4,7 @@ import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import TextScreen from '../src/TextScreen';
 import ImageScreen from '../src/Imagess';
+import AudioScreen from '../src/AudioScreen';
 import VideoScreen from '../src/VideoScreen';
 
 const Navigator = createBottomTabNavigator({
@@ -70,6 +71,41 @@ const Navigator = createBottomTabNavigator({
                         <Image
                             style={{height: 30, width: 30, marginTop: -20}}
                             source={require('../src/Component/assets/ImageInactive.png')}
+                        />
+                    );
+                }
+            },
+        }),
+    },
+
+    AudioScreen: {
+        screen: AudioScreen,
+        navigationOptions: () => ({
+            tabBarLabel: 'Audio',
+            tabBarOptions: {
+                activeTintColor: '#4caf4e',
+                defaultTintColor: '#283f78',
+                labelStyle: {
+                    fontSize: 14,
+                    marginTop: -30,
+                },
+                style: {
+                    height: 70,
+                },
+            },
+            tabBarIcon: ({focused}) => {
+                if (focused) {
+                    return (
+                        <Image
+                            style={{height: 30, width: 30, marginTop: -20}}
+                            source={require('../src/Component/assets/Audioactive.png')}
+                        />
+                    );
+                } else {
+                    return (
+                        <Image
+                            style={{height: 30, width: 30, marginTop: -20}}
+                            source={require('../src/Component/assets/AudioInactive.png')}
                         />
                     );
                 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {FlatList, Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 export default class Imagess extends Component {
     constructor(props) {
@@ -10,14 +11,12 @@ export default class Imagess extends Component {
         };
     }
 
-    ShowModalFunction(visible, imageURL) {
-        //handler to handle the click on image of Grid
-        //and close button on modal
+    ShowModalFunction = (visible, imageURL) => {
         this.setState({
             ModalVisibleStatus: visible,
             imageuri: imageURL,
         });
-    }
+    };
 
     componentDidMount() {
         var that = this;
@@ -106,7 +105,6 @@ export default class Imagess extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 30,
     },
     image: {
         height: 120,
